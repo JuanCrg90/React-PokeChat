@@ -12,17 +12,18 @@
     <section id="container"></section>
     <div id="example"></div>
     <script type="text/babel">
-        class HelloWorldComponent  extends React.Component {
-          render() {
-            return <h1>Hello {this.props.name}!</h1>
+        class HelloWorldComponent extends React.Component {
+            render () {
+            return <h1>Name: { this.props.name }, Age: { this.props.age }</h1>
             }
         };
 
-        ReactDOM.render(<HelloWorldComponent name="JuanCrg90" />, document.getElementById('container'));
+        HelloWorldComponent.propTypes = {
+          name: React.PropTypes.string,
+          age: React.PropTypes.number
+       };
 
-        setTimeout(() => {
-          ReactDOM.render(<HelloWorldComponent name="Juan Carlos Ruiz" />, document.getElementById('container'));
-          }, 5000)
+        ReactDOM.render(<HelloWorldComponent name = 'Juan Carlos Ruiz' age = {25} />, document.getElementById('container'));
     </script>
 
 
