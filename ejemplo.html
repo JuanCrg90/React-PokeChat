@@ -12,13 +12,17 @@
     <section id="container"></section>
     <div id="example"></div>
     <script type="text/babel">
-        var HelloWorldComponent = React.createClass({
-          render: function() {
+        class HelloWorldComponent  extends React.Component {
+          render() {
             return <h1>Hello {this.props.name}!</h1>
             }
-        });
+        };
         
         ReactDOM.render(<HelloWorldComponent name="JuanCrg90" />, document.getElementById('container'));
+
+        setTimeout(() => {
+          ReactDOM.render(<HelloWorldComponent name="Juan Carlos Ruiz" />, document.getElementById('container'));
+          }, 5000)
     </script>
 
 
