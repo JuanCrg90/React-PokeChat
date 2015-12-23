@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>React.js course</title>
+    <script src="https://fb.me/react-0.14.3.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  </head>
+  <body>
+    <section id="container"></section>
+    <div id="example"></div>
+    <script type="text/babel">
+        var HelloWorldComponent = React.createClass({
+          render: function() {
+            return <h1>Hello world</h1>
+            }
+        });
+        
+        React.render(<HelloWorldComponent />, document.getElementById('container'));
+    </script>
+
+
+  </body>
+</html>
