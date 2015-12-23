@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>React.js course</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://fb.me/react-0.14.3.js"></script>
     <script src="https://fb.me/react-dom-0.14.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -12,18 +14,43 @@
     <section id="container"></section>
     <div id="example"></div>
     <script type="text/babel">
-        class HelloWorldComponent extends React.Component {
+        var pokemons = [
+            {number: 1, name: 'Bulbasaur'},
+            {number: 2, name: 'Ivysaur'},
+            {number: 3, name: 'Venusaur'},
+        ];
+
+        class PokeAvatar extends React.Component {
+          render() {
+              var url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.props.number}.png`;
+              return <img src = {url} className="avatar" />
+            }
+        }
+
+        class PokeRow extends React.Component {
             render () {
-            return <h1>Name: { this.props.name }, Age: { this.props.age }</h1>
+              return <li className="pokerow" >
+              <PokeAvatar number = {this.props.number} />
+              {this.props.name}
+              </li>
             }
         };
 
-        HelloWorldComponent.propTypes = {
-          name: React.PropTypes.string,
-          age: React.PropTypes.number
-       };
+        class PokeTable extends React.Component {
+          render () {
+            return <ul className="poketable">
+                {
+                  this.props.pokemons.map((pokemon) => {
+                    return <PokeRow key={pokemon.number} name={pokemon.name} number={pokemon.number} />
+                  })
+                }
 
-        ReactDOM.render(<HelloWorldComponent name = 'Juan Carlos Ruiz' age = {25} />, document.getElementById('container'));
+            </ul>
+            }
+          }
+
+        ReactDOM.render(<PokeTable pokemons = {pokemons}/>, document.getElementById('container'));
+
     </script>
 
 
