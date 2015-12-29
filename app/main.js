@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PokeTable from './component.jsx';
+import PokeTable from './components/PokeTable.js';
 
 function main() {
   const pokemons = [
