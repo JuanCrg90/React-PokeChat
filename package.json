@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel index.js --presets es2015 | node"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/JuanCrg90/My-First-React#readme",
   "devDependencies": {
+    "babel-cli": "^6.3.17",
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.0.12",
@@ -30,8 +32,11 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "express": "^4.13.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "socket.io": "^1.3.7",
+    "socket.io-client": "^1.3.7",
     "uid": "0.0.2"
   }
 }
