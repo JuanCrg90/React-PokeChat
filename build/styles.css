@@ -62,7 +62,7 @@ body {
 }
 
 .pokeapp {
-  height:50%;
+  height: 100%;
   width: 100%;
   overflow:hidden;
 }
@@ -99,4 +99,15 @@ body {
   float: right;
   height: 100%;
   overflow: scroll;
+}
+
+
+  
+.message-animation-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.message-animation-enter.message-animation-enter-active {
+  opacity: 1;
 }
